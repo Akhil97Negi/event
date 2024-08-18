@@ -27,7 +27,7 @@ const EventList = () => {
       <ul>
         {events.map((event) => (
           <li key={event._id}>
-            <h3>{event.name}</h3> {/* Ensure the property name matches your data */}
+            <h3>{event.name}</h3> 
             <p>{event.date}</p>
             <p>{event.location}</p>
             <Button onClick={() => handleDelete(event._id)} variant="danger">Delete</Button>

@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-// Get all users (Admin only)
+// Get all users Admin only
 const getAllUsers = async (req, res) => {
   try {
     const users = await UserModel.find();
@@ -48,7 +48,7 @@ const userRegister = async (req, res) => {
       return res.status(400).json('All fields are required');
     }
 
-    // Ensure valid role or default to 'user'
+    
     const validRoles = ['admin', 'user'];
     const assignedRole = validRoles.includes(role) ? role : 'user';
 

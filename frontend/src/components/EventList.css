@@ -1,0 +1,51 @@
+.event-list-container {
+    padding: 40px; 
+    max-width: 1400px; 
+    margin: auto;
+  
+  .event-list {
+    margin-top: 20px;
+  }
+  
+  .event-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    padding: 20px;
+    width: 450px; 
+    max-width: 800px; 
+    margin: auto; 
+  }
+  
+  .event-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .loading, .error {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #6c757d;
+  }
+  
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .add-event-button {
+    position: relative;
+    padding-left: 15px; 
+    font-size: 1.2rem; 
+        line-height: 1.5; 
+    display: inline-flex; 
+      align-items: center; 
+  }
+  
+  .plus-icon {
+    font-size: 1.2 rem; 
+  }
+}

@@ -7,10 +7,9 @@ const initialState = {
   error: null,
 };
 
-
 export const fetchEvents = createAsyncThunk('events/fetchEvents', async () => {
   try {
-    const response = await axios.get('http://localhost:5050/events');
+    const response = await axios.get('https://event-backend-wbiy.onrender.com/events');
     return response.data; 
   } catch (error) {
     console.error('Error fetching events:', error);
@@ -28,9 +27,13 @@ export const createEvent = createAsyncThunk('events/createEvent', async (event) 
   }
 });
 
-export const updateEvent = createAsyncThunk('events/updateEvent', async ({ id, updates }) => {
+export const updateEvent = createAsyncThunk('events/updateEvent', async ({ id, updates, token }) => {
   try {
-    const response = await axios.put(`https://event-backend-wbiy.onrender.com/events/${id}`, updates);
+    const response = await axios.put(`https://event-backend-wbiy.onrender.com/events/${id}`, updates, {
+      headers: {
+        Authorization: `Bearer ${token}` // Include the token in the headers
+      }
+    });
     return response.data; 
   } catch (error) {
     console.error('Error updating event:', error);
@@ -38,17 +41,48 @@ export const updateEvent = createAsyncThunk('events/updateEvent', async ({ id, u
   }
 });
 
-export const deleteEvent = createAsyncThunk('events/deleteEvent', async (id) => {
+// export const deleteEvent = createAsyncThunk('events/deleteEvent', async ({ id, token }) => {
+//   try {
+//     if (!id || !token) {
+//       throw new Error('ID or token is missing');
+//     }
+    
+//     await axios.delete(`https://event-backend-wbiy.onrender.com/events/${id}`, {
+//       headers: {
+//         Authorization: `Bearer ${token}`
+//       }
+//     });
+//     return id;
+//   } catch (error) {
+//     console.error('Error deleting event:', error);
+//     throw error;
+//   }
+// });
+
+export const deleteEvent = createAsyncThunk('events/deleteEvent', async ({ id, token }) => {
   try {
-    await axios.delete(`https://event-backend-wbiy.onrender.com/events/${id}`);
+    if (!id || !token) {
+      throw new Error('ID or token is missing');
+    }
+
+    console.log('Deleting event with ID:', id); // Debugging line
+    console.log('Using token:', token); // Debugging line
+    
+    const response = await axios.delete(`https://event-backend-wbiy.onrender.com/events/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}` // Include the token in the headers
+      }
+    });
     return id;
   } catch (error) {
-    console.error('Error deleting event:', error);
+    console.error('Error deleting event:', error.response?.data || error.message);
     throw error;
   }
 });
 
-// Event slice
+
+
+
 const eventSlice = createSlice({
   name: 'events',
   initialState,

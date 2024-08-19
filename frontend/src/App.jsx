@@ -21,6 +21,8 @@ const App = () => {
           <Route path="/register" element={!isLoggedIn ? <Register /> : <Navigate to="/" />} />
           <Route path="/events" element={isLoggedIn ? <EventList /> : <Navigate to="/login" />} />
           <Route path="/events/new" element={isLoggedIn ? <EventForm /> : <Navigate to="/login" />} />
+          <Route path="/events/:eventId/edit" element={isLoggedIn ? <EventForm /> : <Navigate to="/login" />} />
+          <Route path="/events/:eventId/participants" element={isLoggedIn ? <div>Participants Page</div> : <Navigate to="/login" />} />
         </Routes>
       </div>
     </Router>

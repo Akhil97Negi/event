@@ -33,7 +33,7 @@ const EventPage = () => {
     try {
       const response = await axios.get('https://event-backend-wbiy.onrender.com/participants/myevents', {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,  // Assuming the token is stored in localStorage
+          Authorization: `Bearer ${localStorage.getItem('token')}`,  
         },
       });
       setRegisteredEvents(response.data);

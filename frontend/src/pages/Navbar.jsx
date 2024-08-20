@@ -75,10 +75,10 @@ const Navbar = () => {
               aria-label="Open menu"
               size="lg"
               borderRadius="full"
-              color="white" // Set icon color
-              bg="teal.500" // Set background color
-              _hover={{ bg: 'teal.400' }} // Background color on hover
-              _active={{ bg: 'teal.600' }} // Background color on active
+              color="white" 
+              bg="teal.500" 
+              _hover={{ bg: 'teal.400' }} 
+              _active={{ bg: 'teal.600' }} 
             />
             <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
               <DrawerOverlay />

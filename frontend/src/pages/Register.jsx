@@ -51,7 +51,7 @@ const Register = () => {
     }
   };
 
-  // Determine the breakpoint for responsive styles
+  
   const maxW = useBreakpointValue({ base: 'full', md: 'md' });
 
   return (
@@ -92,9 +92,9 @@ const Register = () => {
                 variant="outline"
                 bg="gray.50"
                 color="blue.800" // Set text color
-                _placeholder={{ color: 'blue.500' }} // Set placeholder text color
-                _hover={{ borderColor: 'blue.500' }} // Border color on hover
-                _focus={{ borderColor: 'blue.500' }} // Border color on focus
+                _placeholder={{ color: 'blue.500' }} 
+                _hover={{ borderColor: 'blue.500' }} 
+                _focus={{ borderColor: 'blue.500' }} 
               />
             </FormControl>
 
@@ -108,10 +108,10 @@ const Register = () => {
                 focusBorderColor="blue.500"
                 variant="outline"
                 bg="gray.50"
-                color="blue.800" // Set text color
-                _placeholder={{ color: 'blue.500' }} // Set placeholder text color
-                _hover={{ borderColor: 'blue.500' }} // Border color on hover
-                _focus={{ borderColor: 'blue.500' }} // Border color on focus
+                color="blue.800" 
+                _placeholder={{ color: 'blue.500' }} 
+                _hover={{ borderColor: 'blue.500' }} 
+                _focus={{ borderColor: 'blue.500' }} 
               />
             </FormControl>
 
@@ -125,10 +125,10 @@ const Register = () => {
                 focusBorderColor="blue.500"
                 variant="outline"
                 bg="gray.50"
-                color="blue.800" // Set text color
-                _placeholder={{ color: 'blue.500' }} // Set placeholder text color
-                _hover={{ borderColor: 'blue.500' }} // Border color on hover
-                _focus={{ borderColor: 'blue.500' }} // Border color on focus
+                color="blue.800" 
+                                _placeholder={{ color: 'blue.500' }} 
+                _hover={{ borderColor: 'blue.500' }} 
+                _focus={{ borderColor: 'blue.500' }} 
               />
             </FormControl>
 
@@ -140,9 +140,9 @@ const Register = () => {
                 focusBorderColor="blue.500"
                 variant="outline"
                 bg="gray.50"
-                color="blue.800" // Set text color
-                _hover={{ borderColor: 'blue.500' }} // Border color on hover
-                _focus={{ borderColor: 'blue.500' }} // Border color on focus
+                color="blue.800" 
+                _hover={{ borderColor: 'blue.500' }} 
+                _focus={{ borderColor: 'blue.500' }} 
               >
                 <option value="user">User</option>
                 <option value="admin">Admin</option>

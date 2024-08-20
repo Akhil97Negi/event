@@ -45,7 +45,7 @@ const Login = () => {
     }
   };
 
-  // Determine the breakpoint for responsive styles
+
   const maxW = useBreakpointValue({ base: 'full', md: 'md' });
 
   return (
@@ -85,10 +85,11 @@ const Login = () => {
                 focusBorderColor="blue.500"
                 variant="outline"
                 bg="gray.50"
-                color="blue.800" // Set text color
-                _placeholder={{ color: 'blue.500' }} // Set placeholder text color
-                _hover={{ borderColor: 'blue.500' }} // Border color on hover
-                _focus={{ borderColor: 'blue.500' }} // Border color on focus
+                color="blue.800" 
+                _placeholder={{ color: 'blue.500' }} 
+                _hover={{ borderColor: 'blue.500' }} 
+                _focus={{ borderColor: 'blue.500' }} 
+                
               />
             </FormControl>
             <FormControl id="password" isRequired>
@@ -101,10 +102,10 @@ const Login = () => {
                 focusBorderColor="blue.500"
                 variant="outline"
                 bg="gray.50"
-                color="blue.800" // Set text color
-                _placeholder={{ color: 'blue.500' }} // Set placeholder text color
-                _hover={{ borderColor: 'blue.500' }} // Border color on hover
-                _focus={{ borderColor: 'blue.500' }} // Border color on focus
+                color="blue.800" 
+                _placeholder={{ color: 'blue.500' }} 
+                _hover={{ borderColor: 'blue.500' }} 
+                _focus={{ borderColor: 'blue.500' }} 
               />
             </FormControl>
             <Button

@@ -11,3 +11,4 @@ participantRouter.post('/register/:eventId', Auth(['user']), registerForEvent);
 participantRouter.delete('/cancel/:eventId', Auth(['user']), cancelRegistration);
 
 module.exports = participantRouter;
+

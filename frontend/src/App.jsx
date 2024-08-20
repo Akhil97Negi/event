@@ -1,32 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import Navbar from './components/Navbar';
-import Login from './components/Login';
-import Register from './components/Register';
-import Home from './components/Home';
-import EventList from './components/EventList';
-import EventForm from './components/EventForm';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import Navbar from './pages/Navbar';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Home from './pages/Home';
+import Admin from './pages/Admin';
+import Events from './pages/Event';
+import { ChakraProvider } from '@chakra-ui/react';
 
-const App = () => {
-  const { isLoggedIn } = useSelector(state => state.auth);
-
+function App() {
   return (
-    <Router>
-      <Navbar />
-      <div className="container my-4">
+    <Provider store={store}>
+      <ChakraProvider>
+      <Router>
+        <Navbar />
         <Routes>
-          <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
-          <Route path="/login" element={!isLoggedIn ? <Login /> : <Navigate to="/" />} />
-          <Route path="/register" element={!isLoggedIn ? <Register /> : <Navigate to="/" />} />
-          <Route path="/events" element={isLoggedIn ? <EventList /> : <Navigate to="/login" />} />
-          <Route path="/events/new" element={isLoggedIn ? <EventForm /> : <Navigate to="/login" />} />
-          <Route path="/events/:eventId/edit" element={isLoggedIn ? <EventForm /> : <Navigate to="/login" />} />
-          <Route path="/events/:eventId/participants" element={isLoggedIn ? <div>Participants Page</div> : <Navigate to="/login" />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+      </ChakraProvider>
+    </Provider>
   );
-};
+}
 
 export default App;
